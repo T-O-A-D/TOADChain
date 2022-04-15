@@ -1,0 +1,3 @@
+﻿  Consensus.cpp
+Consensus.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  Consensus.vcxproj -> E:\TOAD_TECH\consensus\prototype\Consensus\Debug\Consensus.exe
