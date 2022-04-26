@@ -1,1 +1,19 @@
-﻿
+﻿  Consensus.cpp
+  DoMath.cpp
+E:\TOAD_TECH\repos\TOADChain\Consensus\DoMath.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Proof.cpp
+E:\TOAD_TECH\repos\TOADChain\Consensus\Proof.cpp(26,26): warning C4244: '=': conversion from 'time_t' to 'int', possible loss of data
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include\algorithm(2892,1): warning C4242: '=': conversion from 'int' to 'char', possible loss of data
+E:\TOAD_TECH\repos\TOADChain\Consensus\lib\croncpp-master\include\croncpp.h(314): message : see reference to function template instantiation '_OutIt std::transform<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,int(__cdecl *)(int)>(const _InIt,const _InIt,_OutIt,_Fn)' being compiled
+          with
+          [
+              _OutIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Elem=char,
+              _InIt=std::_String_iterator<std::_String_val<std::_Simple_types<char>>>,
+              _Fn=int (__cdecl *)(int)
+          ]
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 1191 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Consensus.vcxproj -> E:\TOAD_TECH\repos\TOADChain\Consensus\Release\Consensus.exe

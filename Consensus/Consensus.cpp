@@ -1,18 +1,16 @@
 // Consensus.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include "cryptlib.h"
-#include "sha.h"
-#include "filters.h"
-#include "hex.h"
-#include "files.h"
+
 
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
 #include <ctime>
-#include <random>
-#include <string>
+
+#include <string.h>
+#include "Proof.h"
+#include <thread>
 int main(int argc, char* argv[])
 {
     using namespace std;
@@ -27,55 +25,61 @@ int main(int argc, char* argv[])
     HexEncoder encoder;*/
 
     //srand(time(NULL));
+
+    //DoMath().timeTwo(3);
+    cout << R"(
+______________________________________________________________________
+______________________________________________________________________
+  _______ ____          _____     _____ _    _          _____ _   _ 
+ |__   __/ __ \   /\   |  __ \   / ____| |  | |   /\   |_   _| \ | |
+    | | | |  | | /  \  | |  | | | |    | |__| |  /  \    | | |  \| |
+    | | | |  | |/ /\ \ | |  | | | |    |  __  | / /\ \   | | | . ` |
+    | | | |__| / ____ \| |__| | | |____| |  | |/ ____ \ _| |_| |\  |
+    |_|  \____/_/    \_\_____/   \_____|_|  |_/_/    \_\_____|_| \_|
+______________________________________________________________________                                                                
+                                                                    
+)";
+    Proof Prover;
     while (true) {
-        string initial;
-        cout << "Input msg : ";
-        cin >> initial;
+        int selection;
+        cout << "Select one of the following: \n0 - Exit  \n1 - Get Hash Info \n2 - Get Current Network Time\n3 - Get Random Nonce\n4 - Participate in validation contest" << endl;
 
-        int difficulty;
-        char zero = '0';
-        cout << "Input Difficulty : ";
-        cin >> difficulty;
-        string required(difficulty, zero);
-        cout << required << endl;
-        int i = 0;
-
-        random_device rd;
-        mt19937 gen(rd());
-        uniform_int_distribution<unsigned long long> dis(0, 100000);
-        while (true) {
-            i += 1;
-            //std::cout << "Enter msg: ";
-            //cin >> tx;
-            /*string txWithNonce = tx + "2";
-            hash.Update((const byte*)txWithNonce.data(), txWithNonce.size());
-            digest.resize(hash.DigestSize());
-            hash.Final((byte*)&digest[0]);
-
-            cout << "Message: " << txWithNonce << endl;
-            cout << "Digest: "  <<endl;
-
-            StringSource(digest, true, new Redirector(encoder));
-            cout << endl;*/
-
-            CryptoPP::SHA256 sha256;
-            string source, hash;
-            //string nonce = to_string(rand());
-            string nonce = to_string(dis(gen));
-            source = initial + nonce;
-            CryptoPP::StringSource(source, true, new CryptoPP::HashFilter(sha256, new CryptoPP::HexEncoder(new CryptoPP::StringSink(hash))));
-
-            cout << "\r" << "Iteration :" << i << " , Nonce : " << nonce << " , Digest : " << hash;
-            string testResult = hash.substr(0, difficulty);
-            if (testResult == required) {
-                cout << endl;
-                cout << "Found answer" << endl;
-                break;
-            }
+        cin >> selection;
+ 
+        switch (selection) {
+        case 1:
+            Prover.getHashInfo();
+            break;
+        case 2:
+        {
+            std::string currentTime = Prover.getCurrentTime();
+            std::cout << currentTime << std::endl;
+            break;
         }
-        cout << "Continue ?" << endl;
-        string cont;
-        cin >> cont;
+            
+        case 3:
+        {
+            std::string randomNonce = Prover.getRandomNumber();
+            std::cout << randomNonce << std::endl;
+            break;
+        }
+           
+        case 4:
+            Prover.enterContest();
+            break;
+        case 0:
+            return 0;
+        default:
+            cout << "Invalid input\n";
+            cin.clear();
+            cin.ignore();
+            continue;
+        };
+       
+    }
+
+    while (true) {
+        
     }
     
     return 0;

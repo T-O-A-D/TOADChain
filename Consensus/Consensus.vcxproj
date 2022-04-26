@@ -86,9 +86,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\cryptopp860</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\TOAD_TECH\repos\TOADChain\Consensus\lib\Scheduler-master;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\CTPL-master\include;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\croncpp-master\include;$(SolutionDir)lib\cryptopp860</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -104,9 +104,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)lib\cryptopp860</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>E:\TOAD_TECH\repos\TOADChain\Consensus\lib\Scheduler-master;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\CTPL-master\include;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\croncpp-master\include;$(SolutionDir)lib\cryptopp860</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -122,8 +122,9 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\TOAD_TECH\repos\TOADChain\Consensus\lib\Scheduler-master;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\CTPL-master\include;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\croncpp-master\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -136,8 +137,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>E:\TOAD_TECH\repos\TOADChain\Consensus\lib\Scheduler-master;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\CTPL-master\include;E:\TOAD_TECH\repos\TOADChain\Consensus\lib\croncpp-master\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,6 +150,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Consensus.cpp" />
+    <ClCompile Include="DoMath.cpp" />
+    <ClCompile Include="Proof.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DoMath.h" />
+    <ClInclude Include="lib\croncpp-master\include\croncpp.h" />
+    <ClInclude Include="lib\CTPL-master\include\ctpl_stl.h" />
+    <ClInclude Include="lib\Scheduler-master\Scheduler.h" />
+    <ClInclude Include="Proof.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
